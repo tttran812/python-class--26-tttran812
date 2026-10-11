@@ -83,4 +83,3 @@ else: # if they type anything else tell them its invalid
   exit()
 
 print("Thanks and have a great day!")
-
