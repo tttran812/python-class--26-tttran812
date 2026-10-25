@@ -12,7 +12,7 @@ def play_game():
     print(
         """"
 E: Easy - Guess from 1 to 10, limit 5 attempts
-M: Mediumm - Guess from `1 to 100, limit 7 attempts
+M: Mediumm - Guess from 1 to 100, limit 7 attempts
 H: Hard - Guess from 1 to 1000, limit 10 attempts
         """)
     your_level = input("Which level would you like to play? E/M/H: ")
@@ -30,25 +30,23 @@ H: Hard - Guess from 1 to 1000, limit 10 attempts
         limit = 10000 # punish them if they don't enter a correct level :)
         attempts = 5
 
-    secret_number = random.randint(1, LIMIT)
-    print(f"I am thinking of a number from 1 to {LIMIT}\n")
+    secret_number = random.randint(1, limit)
+    print(f"I am thinking of a number from 1 to {limit}\n")
     count = 1 # keep track of the total number of attempts
 
-    # check if they have any attempts left
-    if count <= attempts:
-    
     while (guess := int(input("Your guess: "))) != secret_number:
+        # check if they have any attempst left
+        if count >= attempts:
+            print("Sorry, you ran out of attempts!")
+            break
         # the guess is incorrect
         if guess < secret_number:
             print("Sorry, your guess is too low.")
         elif guess > secret_number:
             print("Sorry, your guess is too high.")
         count += 1 # increment the guess attempt counter
-        if count > attempts:
-            print("Sorry, you ran out of ")
-
-    # if they guessed correctly
-    print(f"Congrats! You guessed it in {count} tries!\n")
+    else: # if they guessed correctly
+        print(f"Congrats! You guessed it in {count} tries!\n")
 
 def main():
     # the main program driver
