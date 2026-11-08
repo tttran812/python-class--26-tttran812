@@ -11,15 +11,14 @@ def list(movie_list):
         print()
 
 def find_by_year(movie_list):
-    print(movie_list)
     year = int(input("Year: "))
     found_match = False # set a flag for matches
     for movie in movie_list:
         if movie[1] == year:
             print(f"{movie[0]} was released in {year}.")
             found_match = True
-        if found_match == False:
-            print(f"No movies found for release in {year}")
+    if found_match == False:
+        print(f"No movies found for release in {year}")
     print()
 
 def add(movie_list):
