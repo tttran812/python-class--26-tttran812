@@ -1,5 +1,5 @@
 # Starting file for LAB 6-2
-# Include your course number, student first and last name, and date in the comment header
+# CS 31, Trang Tran, 11/7/2026
 
 def list(movie_list):
     if len(movie_list) == 0:
